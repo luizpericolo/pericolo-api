@@ -1,47 +1,47 @@
-# project_name
+# pericolo_api
 
-[![codecov](https://codecov.io/gh/author_name/project_urlname/branch/main/graph/badge.svg?token=project_urlname_token_here)](https://codecov.io/gh/author_name/project_urlname)
-[![CI](https://github.com/author_name/project_urlname/actions/workflows/main.yml/badge.svg)](https://github.com/author_name/project_urlname/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/luizpericolo/pericolo-api/branch/main/graph/badge.svg?token=pericolo-api_token_here)](https://codecov.io/gh/luizpericolo/pericolo-api)
+[![CI](https://github.com/luizpericolo/pericolo-api/actions/workflows/main.yml/badge.svg)](https://github.com/luizpericolo/pericolo-api/actions/workflows/main.yml)
 
-project_description
+Awesome pericolo_api created by luizpericolo
 
 ## Install
 
 
 ### Running on gitpod
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/author_name/project_urlname)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/luizpericolo/pericolo-api)
 
 ### from source
 ```bash
-git clone https://github.com/author_name/project_urlname project_name
-cd project_name
+git clone https://github.com/luizpericolo/pericolo-api pericolo_api
+cd pericolo_api
 make install
 ```
 
 ## Executing
 
 ```bash
-$ project_name run --port 8080
+$ pericolo_api run --port 8080
 ```
 
 or
 
 ```bash
-python -m project_name run --port 8080
+python -m pericolo_api run --port 8080
 ```
 
 or
 
 ```bash
-$ uvicorn project_name:app
+$ uvicorn pericolo_api:app
 ```
 
 ## CLI
 
 ```bash
-❯ project_name --help
-Usage: project_name [OPTIONS] COMMAND [ARGS]...
+❯ pericolo_api --help
+Usage: pericolo_api [OPTIONS] COMMAND [ARGS]...
 
 Options:
   --install-completion [bash|zsh|fish|powershell|pwsh]
@@ -60,8 +60,8 @@ Commands:
 ### Creating a user
 
 ```bash
-❯ project_name create-user --help
-Usage: project_name create-user [OPTIONS] USERNAME PASSWORD
+❯ pericolo_api create-user --help
+Usage: pericolo_api create-user [OPTIONS] USERNAME PASSWORD
 
   Create user
 
@@ -77,7 +77,7 @@ Options:
 **IMPORTANT** To create an admin user on the first run:
 
 ```bash
-project_name create-user admin admin --superuser
+pericolo_api create-user admin admin --superuser
 ```
 
 ### The Shell
@@ -85,7 +85,7 @@ project_name create-user admin admin --superuser
 You can enter an interactive shell with all the objects imported.
 
 ```bash
-❯ project_name shell       
+❯ pericolo_api shell       
 Auto imports: ['app', 'settings', 'User', 'engine', 'cli', 'create_user', 'select', 'session', 'Content']
 
 In [1]: session.query(Content).all()
@@ -99,12 +99,12 @@ Out[3]: [Content(text='string', title='string', created_time='2021-09-14T19:25:0
 
 ## API
 
-Run with `project_name run` and access http://127.0.0.1:8000/docs
+Run with `pericolo_api run` and access http://127.0.0.1:8000/docs
 
 ![](https://raw.githubusercontent.com/rochacbruno/fastapi-project-template/master/docs/api.png)
 
 
-**For some api calls you must authenticate** using the user created with `project_name create-user`.
+**For some api calls you must authenticate** using the user created with `pericolo_api create-user`.
 
 ## Testing
 
@@ -137,18 +137,18 @@ tests/test_user_api.py::test_user_create PASSED                           [100%]
 ----------- coverage: platform linux, python 3.9.6-final-0 -----------
 Name                              Stmts   Miss  Cover
 -----------------------------------------------------
-project_name/__init__.py              4      0   100%
-project_name/app.py                  16      1    94%
-project_name/cli.py                  21      0   100%
-project_name/config.py                5      0   100%
-project_name/db.py                   10      0   100%
-project_name/models/__init__.py       0      0   100%
-project_name/models/content.py       47      1    98%
-project_name/routes/__init__.py      11      0   100%
-project_name/routes/content.py       52     25    52%
-project_name/routes/security.py      15      1    93%
-project_name/routes/user.py          52     26    50%
-project_name/security.py            103     12    88%
+pericolo_api/__init__.py              4      0   100%
+pericolo_api/app.py                  16      1    94%
+pericolo_api/cli.py                  21      0   100%
+pericolo_api/config.py                5      0   100%
+pericolo_api/db.py                   10      0   100%
+pericolo_api/models/__init__.py       0      0   100%
+pericolo_api/models/content.py       47      1    98%
+pericolo_api/routes/__init__.py      11      0   100%
+pericolo_api/routes/content.py       52     25    52%
+pericolo_api/routes/security.py      15      1    93%
+pericolo_api/routes/user.py          52     26    50%
+pericolo_api/security.py            103     12    88%
 -----------------------------------------------------
 TOTAL                               336     66    80%
 
@@ -170,7 +170,7 @@ make fmt   # formats the code
 This project uses [Dynaconf](https://dynaconf.com) to manage configuration.
 
 ```py
-from project_name.config import settings
+from pericolo_api.config import settings
 ```
 
 ## Acessing variables
@@ -199,7 +199,7 @@ dynaconf_merge = true
 echo = true
 ```
 
-> `dynaconf_merge` is a boolean that tells if the settings should be merged with the default settings defined in project_name/default.toml.
+> `dynaconf_merge` is a boolean that tells if the settings should be merged with the default settings defined in pericolo_api/default.toml.
 
 ### As environment variables
 ```bash
@@ -220,7 +220,7 @@ can read those variables.
 ### Switching environments
 
 ```bash
-PROJECT_NAME_ENV=production project_name run
+PROJECT_NAME_ENV=production pericolo_api run
 ```
 
 Read more on https://dynaconf.com
